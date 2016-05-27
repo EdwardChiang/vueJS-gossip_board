@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
 		<style>
 			body {
 				margin: 0;
@@ -36,11 +36,25 @@
 		</style>
 	</head>
 	<body>
-		<div class="container">
+		<!--<div class="container">
 			<div class="content">
 				<div class="title">Laravel 5</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
 			</div>
+		</div>-->
+	
+		<div class="title">Laravel 5</div>
+		<div id="app" style="color: red; font-size: 50px">
+			@{{ message }}
 		</div>
+		<!--<script>
+			new Vue({
+				el: '#app',
+				data: {
+				message: 'Hello Vue World!'
+			  }
+			})
+		</script>-->
 	</body>
+	<script src="{{ ('assets/js/app.js') }}"></script>
 </html>
