@@ -22,7 +22,7 @@
                                         <div class="card-content black-text center-align">
                                             <span class="card-title">Sign in</span>
                                         </div>
-                                        <form>
+                                        <form id="loginForm">
                                             <div class="input-field">
                                                 <i class="material-icons prefix">account_box</i>
                                                 <input type="text" id="account" name="account">
@@ -45,10 +45,42 @@
                 </div>
 
             </form>
-            <div class="center">
-                <a href="{{url('/register')}}">
+
+            <div id="signUpDiv" class="center">
+                <a class="modal-trigger" href="#modal1">
                     <span>Sign up</span>
                 </a>
+
+                <!-- Sign up modal -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Sign Up</h4>
+                        <div class="input-field">
+                            <i class="material-icons prefix">comment</i>
+                            <input type="text" id="signUpName" name="name" class="form__input">
+                            <label for="Name">Name</label>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">account_box</i>
+                            <input type="text" id="signUpAccount" name="account" class="form__input"/>
+                            <label for="signUpAccount">Username</label>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">lock</i>
+                            <input type="password" id="signUpPassword" name="password" class="form__input"/>
+                            <label for="signUpPassword">Password</label>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">lock</i>
+                            <input type="password" id="signUpConfirmPassword" name="confirm_password" class="form__input">
+                            <label for="confirm_password">Confirm your password</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" id="createAccount" class=" modal-action modal-close waves-effect waves-green btn-flat" v-on:click="insertAccount">sign up<i class="material-icons right">send</i></a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

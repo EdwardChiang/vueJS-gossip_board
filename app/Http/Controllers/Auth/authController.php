@@ -47,18 +47,22 @@ class authController extends Controller
         $isExist = array_search($request->input('account'), $list_account);
 
         if($request->input('account') == "" || $request->input('password') == "" || $request->input('name') == "") {
-            return Redirect::to('/register/1');
+            return response()->json(['status' => 1]);
+            //return Redirect::to('/register/1');
         } else if($isExist !== FALSE) {
-            return Redirect::to('/register/2');
+            return response()->json(['status' => 2]);
+            //return Redirect::to('/register/2');
         } else if($request->input('password') != $request->input('confirm_password')) {
-            return Redirect::to('/register/3');
+            return response()->json(['status' => 3]);
+            //return Redirect::to('/register/3');
         }
 
         $account_data['account'] = $request->input('account');
         $account_data['name'] = $request->input('name');
         $account_data['password'] = bcrypt($request->input('password'));
         DB::table('users')->insert($account_data);
-        return Redirect::to('/');
+        return response()->json(['status' => 0]);
+        //return Redirect::to('/');
         //return DB::table('users')->insertGetId($account_data);
     }
 
