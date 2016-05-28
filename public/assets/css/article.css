@@ -1,0 +1,46 @@
+html {
+    background: url('/assets/img/background.jpg');
+}
+#article_container .card-action {
+    padding-bottom: 0;
+}
+#article_container .card-action #option_article:hover {
+    cursor: pointer;
+}
+
+#article_container .card-content .card-title {
+    font-size : 40px;
+    padding: 0 0.75rem;
+}
+
+#article_container .card-content .author_div {
+    position: relative;
+    top: -70px;
+}
+#article_container .card-content .author_div .account_box{
+    position: relative;
+    top: 5px;
+}
+
+#article_container .card-content .article_content {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+}
+#article_container .card-content .check_reply {
+    position: absolute;
+    right: 40px;
+    top: 5px;
+}
+#article_container .card-content .check_reply:hover {
+    cursor: pointer;
+}
+#article_container .card-content .reply_record {
+    background: rgb(247, 247, 247);
+}
+#article_container .card-content .reply_record p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#article_container .card-content .reply_record .author {
+    color: #1e88e5;
+}

@@ -11,11 +11,29 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('/', 'home@index');
+Route::get('/article/{id}', 'home@article');
+Route::get('/login/{status?}', 'home@login');
+Route::get('/register/{status?}', 'home@register');
+Route::get('/recentArticle', 'home@recent');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+Route::group(['prefix' => 'auth'], function() {
+	Route::post('login', 'Auth\authController@login');
+	Route::post('register', 'Auth\authController@register');
+	Route::get('logout', 'Auth\authController@logout');
+});
+
+Route::group(['prefix' => 'api'], function() {
+	Route::get('getAccount', 'Auth\authController@getAccount');
+
+	Route::group(['prefix' => 'article'], function() {
+		Route::post('create', 'articleController@create');
+		Route::post('update', 'articleController@update');
+		Route::post('delete', 'articleController@delete');
+	});
+
+	Route::group(['prefix' => 'reply'], function() {
+		Route::post('create', 'replyController@create');
+	});
+});

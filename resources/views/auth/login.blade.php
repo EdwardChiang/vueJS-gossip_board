@@ -1,63 +1,61 @@
-@extends('app')
+@extends("init")
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+@section("css")
+    <title>login</title>
+    <link href="{{url('/assets/css/general.css')}}" rel="stylesheet" type="text/css">
+@endsection
 
-					<form class="form-horizontal" role="form" method="POST" action="/auth/login">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+@section("content")
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+    <br/><br/><br/><br/>
+    <div id="login">
+        <div class="formWrapper">
+            <form action="{{url("auth/login")}}" method="post">
+		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="signin-card">
+                    <div class="row">
+                        <div class="col s12 m4 offset-m4">
+                            <div class="card z-depth-3">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="card-content black-text center-align">
+                                            <span class="card-title">Sign in</span>
+                                        </div>
+                                        <form>
+                                            <div class="input-field">
+                                                <i class="material-icons prefix">account_box</i>
+                                                <input type="text" id="account" name="account">
+                                                <label for="account">Username</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <i class="material-icons prefix">lock</i>
+                                                <input type="password" id="password" name="password">
+                                                <label for="password">Password</label>
+                                            </div>
+                                            <div class="card-action center">
+                                                <button type="submit" class="btn btn-warning">Sign in<i class="material-icons right">send</i></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
+            </form>
+            <div class="center">
+                <a href="{{url('/register')}}">
+                    <span>Sign up</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary" style="margin-right: 15px;">
-									Login
-								</button>
+@endsection
 
-								<a href="/password/email">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+@section("js")
+    <script>var STATUS = "{{$status}}";</script>
+    <script src="{{url('/assets/js/login.js')}}"></script>
 @endsection

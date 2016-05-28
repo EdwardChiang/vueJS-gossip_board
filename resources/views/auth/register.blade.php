@@ -1,65 +1,80 @@
-@extends('app')
+@extends("init")
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+@section("css")
+    <title>sign up</title>
+    <link href="{{url('/assets/css/general.css')}}" rel="stylesheet" type="text/css">
+@endsection
 
-					<form class="form-horizontal" role="form" method="POST" action="/auth/register">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
-							</div>
-						</div>
+@section("content")
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+    <br/><br/><br/><br/>
+    <div id="register">
+        <div class="formWrapper">
+            <form action="{{url("auth/register")}}" method="post">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="signin-card">
+                    <div class="row">
+                        <div class="col s12 m4 offset-m4">
+                            <div class="card z-depth-3">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="card-content black-text center-align">
+                                            <h1 class="card-title">Create your account</h1>
+                                        </div>
+                                        <form class="form">
+                                            <div class="input-field">
+                                                <i class="material-icons prefix">comment</i>
+                                                <input type="text" id="Name" name="name" class="form__input">
+                                                <label for="Name">Name</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <i class="material-icons prefix">account_box</i>
+                                                <input type="text" id="account" name="account" class="form__input">
+                                                <label for="account">Choose your username</label>
+                                            </div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+                                            <div class="input-field">
+                                                <i class="material-icons prefix">lock</i>
+                                                <input type="password" id="password" name="password" class="form__input">
+                                                <label for="password">Create a password</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <i class="material-icons prefix">lock</i>
+                                                <input type="password" id="confirm_password" name="confirm_password" class="form__input">
+                                                <label for="confirm_password">Confirm your password</label>
+                                            </div>
+                                            <div class="card-action center">
+                                                <button type="submit" class="btn btn-warning">Sign up<i class="material-icons right">send</i></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="center">
+                <a href="{{url('/login')}}">
+                    <span>Sign in</span>
+                </a>
+            </div>
+        </div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
-							</div>
-						</div>
+        <!--<div id="testAccount">
+            <div v-for="user in accountData">
+                <span>@{{user}}</span>
+            </div>
+        </div>-->
+    </div>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Register
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
+
+@endsection
+
+@section("js")
+    <script>var STATUS = "{{$status}}";</script>
+    <script src="{{url('/assets/js/register.js')}}"></script>
+    <script src="{{url('/assets/js/testVue.js')}}"></script>
 @endsection
