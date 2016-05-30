@@ -33,9 +33,10 @@
                         </div>
                         <div class="card-content row">
                             <div class="article_content s12 col">
-                                <p>
+                                    {!!  nl2br($articleData[0]->content) !!}
+                                            <!---->
                                     <?php
-                                        $str = ($articleData[0]->content);
+                                        /*$str = ($articleData[0]->content);
                                         $token = strtok($str, "\n");
                                         while ($token !== false)
                                         {
@@ -47,9 +48,8 @@
                                             echo "<br/>";
 
                                             $token = strtok("\n");
-                                        }
+                                        }*/
                                     ?>
-                                </p>
                             </div>
                             <div class="input-field s12 col">
                                 <i class="material-icons prefix">account_box</i>

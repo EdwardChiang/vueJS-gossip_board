@@ -38,7 +38,8 @@
             <div class="row">
                 <div class="col s12">
                     <div class="input-field col s11">
-                        <i class="material-icons prefix">translate</i>
+                        <i class="material-icons prefix translate">translate</i>
+                        <!--<div class="Editor"></div>-->
                         <textarea id="create_article_content" class="materialize-textarea"></textarea>
                         <label for="create_article_content">Content</label>
                     </div>

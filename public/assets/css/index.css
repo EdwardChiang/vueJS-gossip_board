@@ -4,6 +4,21 @@ div#editor {
     text-align: left;
 }
 
+.Editor {
+    width: 80%;
+    margin-left: 10%;
+}
+
+#mceu_15 {
+    margin-top: 50px;
+}
+.translate {
+    float:left;
+    left: 10px;
+}
+
+
+
 
 .chip {
     margin-top: 5px;
@@ -64,12 +79,20 @@ html {
     border-bottom: 0;
 }
 #index_container .collapsible-body .single_page_link i{
-    margin-bottom: 5px;
+    margin-top: 10px;
 }
 #index_container .collapsible-body .content {
     border-bottom: 1px solid #ddd;
 }
-#index_container .collapsible-body .article_content p {
+
+#index_container .collapsible-body .article_content *{
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0;
     word-wrap:break-word;
 }
 #index_container .collapsible-body .check_reply {
