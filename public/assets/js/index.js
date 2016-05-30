@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $('.modal-trigger').leanModal();
 
     $('.button-collapse').sideNav({
@@ -22,6 +23,15 @@ $(document).ready(function() {
             marginLeft: "-240px"
         }, 500 );
         $('#hide_side_nav').css('display', 'none');
+    });
+
+    $('#index_container .collapsible-header').on('click', function(){
+        $('#editor').remove();
+        $(this).parent().find('.replyDiv').append('<div id="editor"><div id="edit"></div></div>');
+        $('#edit').froalaEditor({
+            iframe: true
+        });
+        $('#edit div:last').remove();
     });
 
     $('#index_container .collapsible-body .check_reply ').on('click', function(){

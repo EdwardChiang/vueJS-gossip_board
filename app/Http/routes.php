@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('/testt', 'home@test');
 
 Route::get('/', 'home@index');
 Route::get('/article/{id}', 'home@article');

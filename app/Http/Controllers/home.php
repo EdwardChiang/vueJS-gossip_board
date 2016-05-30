@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Redirect;
 class home extends BaseController
 {
 
+    function test()
+    {
+	return view('welcome');
+    }
+
     function index()
     {
         if (Auth::check())

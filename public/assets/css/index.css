@@ -1,3 +1,10 @@
+div#editor {
+    width: 81%;
+    margin: auto;
+    text-align: left;
+}
+
+
 .chip {
     margin-top: 5px;
 }

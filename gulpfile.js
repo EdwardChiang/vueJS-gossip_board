@@ -11,14 +11,17 @@ var elixir = require('laravel-elixir');
  |
  */
 
-/*elixir(function(mix) {
-    mix.less('app.less');
-});*/
+elixir(function(mix) {
+    mix.less('app.less').browserSync({
+		proxy: 'localhost:8000/testt'
+    });
+    //mix.sass('app.scss');
+});
 
 /*elixir(function(mix) {
     mix.browserify('app.js');
 });*/
 
-elixir(function(mix) {
+/*elixir(function(mix) {
     mix.version(['css/app.css', 'app.js']);
-});
+});*/

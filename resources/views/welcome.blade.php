@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+		<link href="/css/app.css" rel="stylesheet" type="text/css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
 		<style>
 			body {
@@ -43,10 +44,57 @@
 			</div>
 		</div>-->
 	
-		<div class="title">Laravel 5</div>
-		<div id="app" style="color: red; font-size: 50px">
-			@{{ message }}
+		<div class="title">Laravel 5
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
+		<p>123</p>
 		</div>
+		<!--<div id="app" style="color: red; font-size: 50px">
+			@{{ message }}
+		</div>-->
 		<!--<script>
 			new Vue({
 				el: '#app',
@@ -56,5 +104,4 @@
 			})
 		</script>-->
 	</body>
-	<script src="{{ ('assets/js/app.js') }}"></script>
 </html>
