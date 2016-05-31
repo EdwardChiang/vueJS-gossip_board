@@ -38,11 +38,15 @@ class replyController extends Controller
             $reply_data['uid'] = Auth::user()->id;
             $reply_data['aid'] = $request->input('aid');
             $reply_data['content'] = $request->input('content');
-            DB::table('reply')->insert($reply_data);
+            $return_id = DB::table('reply')->insertGetId($reply_data);
             DB::table('articles')
                 ->where('id', $request->input('aid'))
                 ->update(['updated_at' => DB::raw('CURRENT_TIMESTAMP')]);
-            return 0;
+            $return_data = DB::table('reply')
+                ->select('reply.*')
+                ->where('id', '=', $return_id)
+                ->get();
+            return [$return_data[0], Auth::user()];
         } else {
             return Redirect::to('/');
         }

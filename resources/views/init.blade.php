@@ -37,7 +37,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dustjs-linkedin/2.7.2/dust-core.min.js" defer></script>
 
     <!--material js-->
-    <script src="/assets/materialize/js/materialize.js" defer></script>
+    <!--<script src="/assets/materialize/js/materialize.js" defer></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
     <!--vue js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
@@ -72,9 +73,8 @@
     <script type="text/javascript" src="http://dmplus.cs.ccu.edu.tw/~s402410052/wysiwyg-editor/js/plugins/save.min.js"></script>
     <script type="text/javascript" src="http://dmplus.cs.ccu.edu.tw/~s402410052/wysiwyg-editor/js/plugins/quick_insert.min.js"></script>
 
-    <!--
-     js-->
-    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <!--tinymce js-->
+    <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
     @yield("css")
 </head>
 <body id="main">

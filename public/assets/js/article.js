@@ -21,8 +21,18 @@ $(document).ready(function() {
                },
                success: function (result) {
                    console.log(result);
-                   if (result != 0) Materialize.toast('<span>fail!</span>', 5000, 'rounded');
-                   else window.location = "./" + ele.data('aid');
+                   /*if (result != 0) Materialize.toast('<span>fail!</span>', 5000, 'rounded');
+                   else window.location = "./" + ele.data('aid');*/
+                   if (!result) Materialize.toast('<span>Create fail!</span>', 5000, 'rounded');
+                   else {
+                       //window.location = "./";
+                       var str = '<p class="row"><span class="author s2 col right-align">';
+                       str += result[1]['name'] + '</span><span class="reply_content s7 col left-align"><span>';
+                       str += result[0]['content'] + '</span></span><span class="s3 col right-align">';
+                       str += result[0]['created_at'] + '</span></p>';
+                       ele.parent().parent().find('.reply_record p:first').before(str);
+                   }
+                   $('#main #toast-container .toast').addClass('toast-error');
                }
            });
        }
@@ -57,6 +67,7 @@ $(document).ready(function() {
             success: function (result) {
                 if (result != 0) Materialize.toast('<span>fail!</span>', 5000, 'rounded');
                 else window.location = "./" + ele.data('aid');
+                $('#main #toast-container .toast').addClass('toast-error');
             }
         });
     });

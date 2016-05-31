@@ -137,6 +137,8 @@
 @endsection
 
 @section("js")
-    <script src="/assets/js/article.js"></script>
-    <script src="/assets/js/index.js"></script>
+    <!--<script src="/assets/js/article.js"></script>-->
+    <!--<script src="/assets/js/index.js"></script>-->
+    <script src="http://dmplus.cs.ccu.edu.tw/~s402410052//vueJS-gossip_board/assets/js/article.js"></script>
+    <script src="http://dmplus.cs.ccu.edu.tw/~s402410052//vueJS-gossip_board/assets/js/index.js"></script>
 @endsection

@@ -89,5 +89,6 @@
 
 @section("js")
     <script>var STATUS = "{{$status}}";</script>
-    <script src="{{url('/assets/js/login.js')}}"></script>
+    <!--<script src="{{url('/assets/js/login.js')}}"></script>-->
+    <script type="text/javascript" src="http://dmplus.cs.ccu.edu.tw/~s402410052//vueJS-gossip_board/assets/js/login.js"></script>
 @endsection
