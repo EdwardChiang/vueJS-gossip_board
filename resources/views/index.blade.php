@@ -8,7 +8,8 @@
 
 @section("index_content")
 <?php
-    header("Content-Security-Policy: default-src *;");
+    //header("Content-Security-Policy: default-src *;");
+    header("Content-Security-Policy: script-src *;");
 ?>
     <div id="index_container" class="center container">
         <br/><br/>
@@ -64,9 +65,9 @@
                                         <span class="author s2 col left-align">{{$articleData[$i]->reply[$j]->name}}</span>
                                         <span class="reply_content s7 col left-align">
                                             <span>
-                                                {!!  nl2br($articleData[$i]->reply[$j]->content) !!}
+                                                <!--{!!  nl2br($articleData[$i]->reply[$j]->content) !!}-->
                                                 <?php
-                                                    /*$str = ($articleData[$i]->reply[$j]->content);
+                                                    $str = ($articleData[$i]->reply[$j]->content);
                                                     $token = strtok($str, "\n");
                                                     while ($token !== false)
                                                     {
@@ -78,7 +79,7 @@
                                                         echo "<br/>";
 
                                                         $token = strtok("\n");
-                                                    }*/
+                                                    }
                                                 ?>
                                             </span>
                                         </span>

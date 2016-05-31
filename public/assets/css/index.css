@@ -9,10 +9,11 @@ div#editor {
     margin-left: 10%;
 }
 
-#mceu_15 {
+body [id^="mceu"].mce-tinymce.mce-container.mce-panel {
     margin-top: 50px;
 }
 .translate {
+    margin-bottom: 50px;
     float:left;
     left: 10px;
 }

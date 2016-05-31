@@ -72,7 +72,8 @@
     <script type="text/javascript" src="http://dmplus.cs.ccu.edu.tw/~s402410052/wysiwyg-editor/js/plugins/save.min.js"></script>
     <script type="text/javascript" src="http://dmplus.cs.ccu.edu.tw/~s402410052/wysiwyg-editor/js/plugins/quick_insert.min.js"></script>
 
-    <!--tinymce js-->
+    <!--
+     js-->
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     @yield("css")
 </head>

@@ -11,7 +11,7 @@
             </ul>
         </div>
         <ul id="logoutDropdown" class="dropdown-content">
-            <li><a class="modal-trigger" href="#create_article_modal">發表新主題</a></li>
+            <li><a id="create_article_modal_link" class="modal-trigger" href="#create_article_modal">發表新主題</a></li>
             <li><a href="/">所有文章列表</a></li>
             <li><a href="/recentArticle">您近期更新/<br/>被留言的文章</a></li>
             <li class="divider"></li>
@@ -37,10 +37,10 @@
 
             <div class="row">
                 <div class="col s12">
-                    <div class="input-field col s11">
+                    <div id="createArticleContentDiv" class="input-field col s11">
                         <i class="material-icons prefix translate">translate</i>
                         <!--<div class="Editor"></div>-->
-                        <textarea id="create_article_content" class="materialize-textarea"></textarea>
+                        <textarea id="create_article_content" class="materialize-textarea tinyMCE"></textarea>
                         <label for="create_article_content">Content</label>
                     </div>
                 </div>

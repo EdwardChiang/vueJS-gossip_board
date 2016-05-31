@@ -1,6 +1,7 @@
 $(document).ready(function() {
     tinymce.init({
-        selector: '#create_article_content',
+        //selector: '#create_article_content',
+        selector: '.tinyMCE',
         height: 200,
         plugins: [
             'advlist autolink lists link image charmap print preview anchor',
@@ -98,7 +99,7 @@ $(document).ready(function() {
     });
 
     $('#create_article_modal #check_create_article').on('click', function(){
-        var iframe = $('#mceu_15').find('iframe').contents();
+        var iframe = $('#create_article_modal #createArticleContentDiv').find('iframe').contents();
         var articleContent = iframe.find('body').html();
         //if(!$('#create_article_title').val() || !$('#create_article_content').val()) {
         if(!$('#create_article_title').val() || !articleContent ) {

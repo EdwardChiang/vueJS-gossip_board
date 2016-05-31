@@ -107,9 +107,10 @@
 
             <div class="row">
                 <div class="col s12">
-                    <div class="input-field col s11">
+                    <div id="editArticleContentDiv" class="input-field col s11">
                         <i class="material-icons prefix">translate</i>
-                        <textarea id="edit_article_content" class="materialize-textarea">{!! $articleData[0]->content !!}</textarea>
+                        <!--<textarea id="edit_article_content" class="materialize-textarea">{!! $articleData[0]->content !!}</textarea>-->
+                        <textarea id="edit_article_content" class="materialize-textarea tinyMCE">{!! $articleData[0]->content !!}</textarea>
                         <label for="edit_article_content">Content</label>
                     </div>
                 </div>

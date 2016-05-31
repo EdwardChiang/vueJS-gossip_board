@@ -30,7 +30,11 @@ $(document).ready(function() {
 
     $('#editArticleModal #check_edit_article').on('click', function(){
         var title = $('#edit_article_title').val();
-        var content = $('#edit_article_content').val();
+
+        var iframe = $('#editArticleModal #editArticleContentDiv').find('iframe').contents();
+        var content = iframe.find('body').html();
+
+        //var content = $('#edit_article_content').val();
         if(!title || !content) {
             Materialize.toast('<span>content can not be null!</span>', 5000, 'rounded');
             return;
@@ -56,8 +60,6 @@ $(document).ready(function() {
             }
         });
     });
-
-
 
     $('#deleteArticleModal #check_delete_article').on('click', function(){
         var ele = $(this);
