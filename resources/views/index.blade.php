@@ -81,6 +81,7 @@
                                 <label for="reply">reply</label>
                             </div>
                             <div class="reply_record s12 col">
+                                <p class="row"></p>
                                 @for($j=0; $j<count($articleData[$i]->reply); $j++)
                                     <p class="row">
                                         <span class="author s2 col left-align">{{$articleData[$i]->reply[$j]->name}}</span>
