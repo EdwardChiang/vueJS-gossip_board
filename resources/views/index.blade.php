@@ -66,7 +66,9 @@
                                     ?>
                                     <!---->
                                 </p>
-                                <p class="content left-align"></p>
+                            </div>
+                            <div class="s12 col">
+                                <p class="content-line left-align"></p>
                             </div>
                             <div class="input-field s12 col replyDiv">
                                 <i class="material-icons prefix account_box">account_box</i>

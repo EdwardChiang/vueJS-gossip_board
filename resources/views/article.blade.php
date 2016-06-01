@@ -72,6 +72,9 @@
                                 ?>
                                 <!---->
                             </div>
+                            <div class="s12 col">
+                                <p class="content-line left-align"></p>
+                            </div>
                             <div class="input-field s12 col">
                                 <i class="material-icons prefix">account_box</i>
                                 <textarea class="reply_content reply materialize-textarea"></textarea>

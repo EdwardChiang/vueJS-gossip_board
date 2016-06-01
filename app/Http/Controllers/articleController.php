@@ -41,24 +41,6 @@ class articleController extends Controller
                     }
                 }
                 $articleData[$j]->latestDate = $latestDate;
-
-                /*$str = $articleData[$j]->content;
-                $from = strrpos($str, "<meta");
-                if($from === false) {
-                    $from = -1;
-                    $to = -1;
-                } else {
-                    $to = strrpos($str, ">");
-                }
-
-                for($i=0; $i<strlen($str); $i++) {
-                    if($from != -1) {
-                        if($i>=$from && $i<=$to+4) {
-                            $articleData[$j]->content[$i] = htmlspecialchars($str[$i]);
-                        }
-                    }
-                }*/
-
             }
 
             for($j = 0; $j < count($articleData); $j++) {

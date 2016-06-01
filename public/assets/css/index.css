@@ -79,7 +79,7 @@ html {
     width: 100%;
     border-bottom: 0;
 }
-#index_container .collapsible-body .content {
+.content-line {
     border-bottom: 1px solid #ddd;
 }
 

@@ -50,7 +50,6 @@ class home extends BaseController
         if (Auth::check())
         {
             $article_data = articleController::get('articles.id', '=', $id);
-            //return $article_data;
 
             return view('/article')
                 ->with('articleData', $article_data);
