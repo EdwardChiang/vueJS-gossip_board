@@ -15,7 +15,8 @@
                 <div  id="article_container" class="card">
                     <div class="card-action right">
                         @if($articleData[0]->uid == Auth::user()->id)
-                            <img id="option_article" src="/assets/img/expand-button.png" class="dropdown-button" data-activates="update_article"/>
+                            <!--<img id="option_article" src="/assets/img/expand-button.png" class="dropdown-button" data-activates="update_article"/>-->
+                            <img id="option_article" src="http://dmplus.cs.ccu.edu.tw/~s402410052/hw3/assets/img/expand-button.png" class="dropdown-button" data-activates="update_article"/>
                             <ul id='update_article' class='dropdown-content'>
                                 <li><a href="#editArticleModal" class="modal-trigger">Edit</a></li>
                                 <li class="divider"></li>
@@ -33,23 +34,43 @@
                         </div>
                         <div class="card-content row">
                             <div class="article_content s12 col">
-                                    {!!  nl2br($articleData[0]->content) !!}
-                                            <!---->
-                                    <?php
-                                        /*$str = ($articleData[0]->content);
-                                        $token = strtok($str, "\n");
-                                        while ($token !== false)
-                                        {
-                                            $len = preg_match_all('/(\w+)|(.)/u', $token, $matches);
-                                            for($k=0; $k<$len; $k++)
-                                            {
-                                                echo    htmlspecialchars($matches[0][$k]);
-                                            }
-                                            echo "<br/>";
+                                <!--{!!  nl2br($articleData[0]->content) !!}-->
+                                <?php
+                                    $str = $articleData[0]->content;
+                                    $from = strrpos($str, "<meta");
+                                    if($from === false) {
+                                        $from = -1;
+                                        $to = -1;
+                                    } else {
+                                        $to = strrpos($str, ">");
+                                    }
 
-                                            $token = strtok("\n");
-                                        }*/
-                                    ?>
+                                    for($i=0; $i<strlen($str); $i++) {
+                                        if($from != -1) {
+                                            if($i>=$from && $i<=$to+1) {
+                                                echo htmlspecialchars($str[$i]);
+                                            }
+                                            else echo $str[$i];
+                                        }
+                                        else echo $str[$i];
+                                    }
+
+                                /*$str = ($articleData[0]->content);
+                                $token = strtok($str, "\n");
+                                while ($token !== false)
+                                {
+                                    $len = preg_match_all('/(\w+)|(.)/u', $token, $matches);
+                                    //var_dump($matches[0]);
+                                    for($k=0; $k<$len; $k++)
+                                    {
+                                        echo    htmlspecialchars($matches[0][$k]);
+                                    }
+                                    echo "<br/>";
+
+                                    $token = strtok("\n");
+                                }*/
+                                ?>
+                                <!---->
                             </div>
                             <div class="input-field s12 col">
                                 <i class="material-icons prefix">account_box</i>

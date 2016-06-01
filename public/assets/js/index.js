@@ -127,7 +127,7 @@ $(document).ready(function() {
                 },
                 success: function (result) {
                     if (result != 0) Materialize.toast('<span>Create fail!</span>', 5000, 'rounded');
-                    else window.location = "./";
+                    else window.location = "/";
                     $('#main #toast-container .toast').addClass('toast-error');
                 }
             });

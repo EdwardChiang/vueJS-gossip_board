@@ -44,8 +44,27 @@
                                 </p>-->
                                 <a class="single_page_link" href="article/{{$articleData[$i]->id}}"><i class="material-icons right">input</i></a>
                                 <p>
-                                    {!!  nl2br($articleData[$i]->content) !!}
-                                            <!---->
+                                    <!--{!!  nl2br($articleData[$i]->content) !!}-->
+                                    <?php
+                                        $str = $articleData[$i]->content;
+                                        $from = strrpos($str, "<meta");
+                                        if($from === false) {
+                                            $from = -1;
+                                            $to = -1;
+                                        } else {
+                                            $to = strrpos($str, ">");
+                                        }
+                                        for($ii=0; $ii<strlen($str); $ii++) {
+                                            if($from != -1) {
+                                                if($ii>=$from && $ii<=$to+1) {
+                                                    echo htmlspecialchars($str[$ii]);
+                                                }
+                                                else echo $str[$ii];
+                                            }
+                                            else echo $str[$ii];
+                                        }
+                                    ?>
+                                    <!---->
                                 </p>
                                 <p class="content left-align"></p>
                             </div>
