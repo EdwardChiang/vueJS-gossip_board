@@ -12,7 +12,7 @@ class CreateArticleTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('article', function(Blueprint $table)
+		Schema::create('articles', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->integer('uid')->unsigned();
@@ -23,7 +23,8 @@ class CreateArticleTable extends Migration {
 			$table->text('game'); //遊戲路徑
 			$table->integer('status')->unsigned();
 			$table->rememberToken();
-			$table->timestamps();
+			$table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+			$table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 		});
 	}
 
@@ -34,7 +35,7 @@ class CreateArticleTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('article');
+		Schema::drop('articles');
 	}
 
 }
