@@ -115,3 +115,24 @@ html {
 #index_container .collapsible-body .reply_record .author {
     color: #1e88e5;
 }
+
+/*upload*/
+.file_input_div {
+    width: 250px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.file_input {
+    float: left;
+}
+
+#file_input_text_div {
+    width: 200px;
+    margin-top: -8px;
+    margin-left: 5px;
+}
+
+.none {
+    display: none;
+}

@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="/assets/materialize/css/materialize.css" type="text/css">
     <link href="/assets/css/general.css" rel="stylesheet" type="text/css">
 
+
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue_grey-red.min.css" />
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
     <!--Froala css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://dmplus.cs.ccu.edu.tw/~s402410052/wysiwyg-editor/css/froala_editor.css">
@@ -75,6 +82,10 @@
 
     <!--tinymce js-->
     <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+
+
+
+
     @yield("css")
 </head>
 <body id="main">

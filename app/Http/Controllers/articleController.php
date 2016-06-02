@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Redirect;
 
+use Input;
+use Validator;
 
 /*
 * the new use
@@ -63,11 +65,17 @@ class articleController extends Controller
     {
         if(Auth::check()) {
             $article_data['uid'] = Auth::user()->id;
-            $article_data['title'] = $request->input('title');
+            /*$article_data['title'] = $request->input('title');
             $article_data['content'] = $request->input('content');
+            $article_data['status'] = 0;*/
+            //return Input::file();
+            $article_data['title'] = Input::all()['title'];
+            $article_data['content'] = Input::all()['content'];
             $article_data['status'] = 0;
-            DB::table('articles')->insert($article_data);
-            return 0;
+            $id = DB::table('articles')->insertGetId($article_data);
+            Input::file('unityFile')->move('./unityData/'.$id, 'game.unity3d');
+            return Redirect::to('/');
+            //return 0;
         } else {
             return Redirect::to('/');
         }

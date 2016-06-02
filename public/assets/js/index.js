@@ -105,7 +105,36 @@ $(document).ready(function() {
         }
     });
 
-    $('#create_article_modal #check_create_article').on('click', function(){
+    //upload file
+    var fileInputTextDiv = $('#file_input_text_div');
+    var fileInput = $('#file_input_file');
+    var fileInputText = $('#file_input_text');
+    var unityFile;
+    fileInput.on('change', function(){
+        console.log(this.files[0]);
+        var str = fileInput.val();
+        var i;
+        if (str.lastIndexOf('\\')) {
+            i = str.lastIndexOf('\\') + 1;
+        } else if (str.lastIndexOf('/')) {
+            i = str.lastIndexOf('/') + 1;
+        }
+        fileInputText.val( str.slice(i, str.length));
+
+        if (fileInputText.val().length != 0) {
+            if (!fileInputTextDiv.hasClass("is-focused")) {
+                fileInputTextDiv.addClass('is-focused');
+            }
+        } else {
+            if (fileInputTextDiv.hasClass("is-focused")) {
+                fileInputTextDiv.addClass('is-focused');
+            }
+        }
+    });
+
+    //$('#create_article_modal #check_create_article').on('click', function(){
+    $('#createArticleForm').on('submit', function(event){
+        //event.preventDefault();
         var iframe = $('#create_article_modal #createArticleContentDiv').find('iframe').contents();
         var articleContent = iframe.find('body').html();
         //if(!$('#create_article_title').val() || !$('#create_article_content').val()) {
@@ -113,7 +142,8 @@ $(document).ready(function() {
             Materialize.toast('<span>Title and content can not be null!</span>', 5000, 'rounded');
             $('#main #toast-container .toast').addClass('toast-error');
         } else {
-            $.ajax({
+            $('#createArticleContent').val(articleContent);
+            /*$.ajax({
                 url: '/api/article/create',
                 type: "POST",
                 data: {
@@ -126,11 +156,57 @@ $(document).ready(function() {
                     return;
                 },
                 success: function (result) {
+                    console.log(result);
                     if (result != 0) Materialize.toast('<span>Create fail!</span>', 5000, 'rounded');
-                    else window.location = "/";
+                    //else window.location = "/";
                     $('#main #toast-container .toast').addClass('toast-error');
                 }
-            });
+            });*/
+            /*var form = this;
+            var formData = new FormData(form);
+            $.ajax({
+                url: '/api/article/create',
+                type: "POST",
+                //data: new FormData($('#createArticleForm').val()),
+                data: formData,
+                error: function (error) {
+                    Materialize.toast('<span>server error!</span>', 5000, 'rounded');
+                    return;
+                },
+                success: function (result) {
+                    console.log(result);
+                    if (result != 0) Materialize.toast('<span>Create fail!</span>', 5000, 'rounded');
+                    //else window.location = "/";
+                    $('#main #toast-container .toast').addClass('toast-error');
+                }
+            });*/
         }
     });
+
+
+
+    $("#submitbutton").on("submit", function(event){
+        event.preventDefault();
+        var form_url = '/api/article/create';
+        var CSRF_TOKEN = $('input[name="_token"]').val();
+
+        //Use the 'FormData' Class
+        var uploadfile = new FormData($("#upload_media_form")[0]);
+
+        $.ajax({
+            url:  form_url,
+            type: 'GET',
+            data: {
+                _token: CSRF_TOKEN,
+                file: uploadfile
+            },
+            contentType: false,
+            processData: false,
+            dataType: 'JSON',
+            success: function (result) {
+                console.log(result);
+            }
+        });
+    });
+
 });
