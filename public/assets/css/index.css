@@ -83,6 +83,9 @@ html {
     border-bottom: 1px solid #ddd;
 }
 
+#index_container .collapsible-body .article_content {
+    padding-bottom: 50px;
+}
 #index_container .collapsible-body .article_content *{
     text-align: left;
     margin-top: 5px;

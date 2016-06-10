@@ -39,12 +39,7 @@
                         </div>
                         <div class="collapsible-body row">
                             <div class="article_content s12 col">
-                                <!--<p>
-                                    <a class="single_page_link" href="article/{{$articleData[$i]->id}}"><i class="material-icons right">input</i></a>
-                                </p>-->
-                                <a class="single_page_link" href="article/{{$articleData[$i]->id}}"><i class="material-icons right">input</i></a>
-                                <p>
-                                    <!--{!!  nl2br($articleData[$i]->content) !!}-->
+                                <a class="single_page_link" href="article/{{$articleData[$i]->id}}" style="color: #039be5;"><i class="material-icons right">input</i></a>
                                     <?php
                                         $str = $articleData[$i]->content;
                                         $from = strrpos($str, "<meta");
@@ -65,17 +60,13 @@
                                         }
                                     ?>
                                     <!---->
-                                </p>
                             </div>
                             <div class="s12 col">
                                 <p class="content-line left-align"></p>
                             </div>
                             <div class="input-field s12 col replyDiv">
                                 <i class="material-icons prefix account_box">account_box</i>
-                                <!--<div class="Editor"></div>-->
-                                <!--<input class="reply_content reply" type="text" name="reply">-->
                                 <textarea class="reply_content reply materialize-textarea"></textarea>
-                                <!--<iframe src="http://dmplus.cs.ccu.edu.tw/~s402410052/wysiwyg-editor/html/iframe.html" frameborder="0" border="0" cellspacing="0" width="100%";></iframe>-->
 
                                 <i class="check_reply material-icons right" data-aid="{{$articleData[$i]->id}}">send</i>
                                 <label for="reply">reply</label>

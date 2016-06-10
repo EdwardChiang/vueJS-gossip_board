@@ -40,34 +40,6 @@ $(document).ready(function() {
         $('#hide_side_nav').css('display', 'none');
     });
 
-    /*$('#index_container .collapsible-header').on('click', function(){
-        //tinymce
-        $('.replyDiv .Editor').empty();
-        $(this).parent().find('.replyDiv .Editor').append('<textarea class="reply_content"></textarea>');
-        tinymce.init({
-            selector: 'textarea',
-            height: 500,
-            plugins: [
-                'advlist autolink lists link image charmap print preview anchor',
-                'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table contextmenu paste code'
-            ],
-            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-            content_css: [
-                '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
-                '//www.tinymce.com/css/codepen.min.css'
-            ]
-        });
-
-        //Froala
-        //$('#editor').remove();
-        //$(this).parent().find('.replyDiv .Editor').append('<div id="editor"><div id="edit"></div></div>');
-        //$('#edit').froalaEditor({
-        //    iframe: true
-        //});
-        //$('#edit div:last').remove();
-    });*/
-
     $('#index_container .collapsible-body .check_reply ').on('click', function(){
         var ele = $(this);
         if(!$(this).parent().find('.reply_content').val()) {
@@ -143,43 +115,6 @@ $(document).ready(function() {
             $('#main #toast-container .toast').addClass('toast-error');
         } else {
             $('#createArticleContent').val(articleContent);
-            /*$.ajax({
-                url: '/api/article/create',
-                type: "POST",
-                data: {
-                    title: $('#create_article_title').val(),
-                    content: articleContent,
-                    _token: $("meta[name='csrf-token']").attr("content")
-                },
-                error: function (error) {
-                    Materialize.toast('<span>server error!</span>', 5000, 'rounded');
-                    return;
-                },
-                success: function (result) {
-                    console.log(result);
-                    if (result != 0) Materialize.toast('<span>Create fail!</span>', 5000, 'rounded');
-                    //else window.location = "/";
-                    $('#main #toast-container .toast').addClass('toast-error');
-                }
-            });*/
-            /*var form = this;
-            var formData = new FormData(form);
-            $.ajax({
-                url: '/api/article/create',
-                type: "POST",
-                //data: new FormData($('#createArticleForm').val()),
-                data: formData,
-                error: function (error) {
-                    Materialize.toast('<span>server error!</span>', 5000, 'rounded');
-                    return;
-                },
-                success: function (result) {
-                    console.log(result);
-                    if (result != 0) Materialize.toast('<span>Create fail!</span>', 5000, 'rounded');
-                    //else window.location = "/";
-                    $('#main #toast-container .toast').addClass('toast-error');
-                }
-            });*/
         }
     });
 

@@ -47,7 +47,7 @@
             </form>
 
             <div id="signUpDiv" class="center">
-                <a class="modal-trigger" href="#modal1">
+                <a class="modal-trigger" href="#modal1" style="color: #039be5;">
                     <span>Sign up</span>
                 </a>
 
@@ -89,6 +89,6 @@
 
 @section("js")
     <script>var STATUS = "{{$status}}";</script>
-    <!--<script src="{{url('/assets/js/login.js')}}"></script>-->
-    <script type="text/javascript" src="http://dmplus.cs.ccu.edu.tw/~s402410052//vueJS-gossip_board/assets/js/login.js"></script>
+    <script src="{{url('/assets/js/login.js')}}"></script>
+    <!--<script type="text/javascript" src="http://dmplus.cs.ccu.edu.tw/~s402410052//vueJS-gossip_board/assets/js/login.js"></script>-->
 @endsection

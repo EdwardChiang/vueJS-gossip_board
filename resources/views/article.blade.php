@@ -34,7 +34,6 @@
                         </div>
                         <div class="card-content row">
                             <div class="article_content s12 col">
-                                <!--{!!  nl2br($articleData[0]->content) !!}-->
                                 <?php
                                     $str = $articleData[0]->content;
                                     $from = strrpos($str, "<meta");
@@ -54,37 +53,25 @@
                                         }
                                         else echo $str[$i];
                                     }
-
-                                /*$str = ($articleData[0]->content);
-                                $token = strtok($str, "\n");
-                                while ($token !== false)
-                                {
-                                    $len = preg_match_all('/(\w+)|(.)/u', $token, $matches);
-                                    //var_dump($matches[0]);
-                                    for($k=0; $k<$len; $k++)
-                                    {
-                                        echo    htmlspecialchars($matches[0][$k]);
-                                    }
-                                    echo "<br/>";
-
-                                    $token = strtok("\n");
-                                }*/
                                 ?>
                                 <!---->
                             </div>
                             <div class="s12 col">
                                 <p class="content-line left-align"></p>
                             </div>
-                            <div class="input-field s12 col">
+                            <div class="userReply input-field s12 col  center">
                                 <i class="material-icons prefix">account_box</i>
                                 <textarea class="reply_content reply materialize-textarea"></textarea>
                                 <i class="check_reply material-icons right" data-aid={{$articleData[0]->id}}>send</i>
                                 <label for="reply">reply</label>
+
+                                <button id="drawBtn" class="btn">Generate Image</button>
+                                <div class="drawImgDiv center"></div>
                             </div>
                             <div class="reply_record s12 col">
                                 <p class="row"></p>
                                 @for($j=0; $j<count($articleData[0]->reply); $j++)
-                                    <p class="row">
+                                    <p id="rid_{{$articleData[0]->reply[$j]->id}}" class="row">
                                         <span class="author s2 col right-align">{{$articleData[0]->reply[$j]->name}}</span>
                                         <span class="reply_content s7 col left-align">
                                             <span>
@@ -106,6 +93,7 @@
                                             </span>
                                         </span>
                                         <span class="s3 col right-align">{{$articleData[0]->reply[$j]->created_at}}</span>
+                                        <img class="replyImg">
                                     </p>
                                 @endfor
                             </div>
@@ -162,8 +150,9 @@
 @endsection
 
 @section("js")
-    <!--<script src="/assets/js/article.js"></script>-->
-    <!--<script src="/assets/js/index.js"></script>-->
-    <script src="http://dmplus.cs.ccu.edu.tw/~s402410052//vueJS-gossip_board/assets/js/article.js"></script>
-    <script src="http://dmplus.cs.ccu.edu.tw/~s402410052//vueJS-gossip_board/assets/js/index.js"></script>
+    <script src="/assets/js/article.js"></script>
+    <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/p5.js"></script>
+    <!--<script src="http://dmplus.cs.ccu.edu.tw/~s402410052//vueJS-gossip_board/assets/js/article.js"></script>-->
+    <!--<script src="http://dmplus.cs.ccu.edu.tw/~s402410052//vueJS-gossip_board/assets/js/index.js"></script>-->
 @endsection

@@ -11,12 +11,9 @@
     <link rel="stylesheet" href="/assets/materialize/css/materialize.css" type="text/css">
     <link href="/assets/css/general.css" rel="stylesheet" type="text/css">
 
-
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue_grey-red.min.css" />
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-
 
     <!--Froala css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -35,7 +32,6 @@
     <link rel="stylesheet" href="http://dmplus.cs.ccu.edu.tw/~s402410052/wysiwyg-editor/css/plugins/video.css">
     <link rel="stylesheet" href="http://dmplus.cs.ccu.edu.tw/~s402410052/wysiwyg-editor/css/plugins/quick_insert.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
-
 
     <!-- jQuery -->
     <script type="text/javascript" charset="utf8" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -83,7 +79,9 @@
     <!--tinymce js-->
     <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
 
-
+    <!--p5 js-->
+    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.0/p5.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.0/addons/p5.dom.js"></script>
 
 
     @yield("css")

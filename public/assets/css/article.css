@@ -1,3 +1,7 @@
+.thumb {
+    display: none;
+}
+
 html {
     background: url('/assets/img/background.jpg');
 }
@@ -22,6 +26,9 @@ html {
     top: 5px;
 }
 
+#article_container .card-content .article_content {
+    padding-bottom: 50px;
+}
 #article_container .card-content .article_content *{
     /*padding-bottom: 30px;
     border-bottom: 1px solid #ddd;*/
