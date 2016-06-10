@@ -26,11 +26,18 @@
                     </div>
 
                     <div class="card-content black-text">
-                        <h1 class="card-title">{{$articleData[0]->title}}</h1>
-                        <div class="author_div right right-align">
-                            <i class="account_box material-icons prefix">account_box</i>
-                            <span class="author">{{$articleData[0]->name}}</span><br/>
-                            <span class="updated_at">{{$articleData[0]->latestDate}}</span>
+                        <div>
+                            <h1 class="card-title">{{$articleData[0]->title}}</h1>
+                            <div class="author_div right right-align">
+                                @if($articleData[0]->game == 1)
+                                    <span class="center">
+                                        <a href="/game/{{$articleData[0]->id}}" target="_blank" class="btn indigo darken-3" style="margin-bottom: 5px;">Play</a>
+                                    </span>
+                                @endif
+                                <i class="account_box material-icons prefix">account_box</i>
+                                <span class="author" style="font-size: 16px; ">{{$articleData[0]->name}}</span><br/>
+                                <span class="updated_at" style="font-size: 16px">{{$articleData[0]->latestDate}}</span>
+                            </div>
                         </div>
                         <div class="card-content row">
                             <div class="article_content s12 col">
@@ -65,7 +72,9 @@
                                 <i class="check_reply material-icons right" data-aid={{$articleData[0]->id}}>send</i>
                                 <label for="reply">reply</label>
 
-                                <button id="drawBtn" class="btn">Generate Image</button>
+                                <div class="row">
+                                    <button id="drawBtn" class="btn">Draw</button>
+                                </div>
                                 <div class="drawImgDiv center"></div>
                             </div>
                             <div class="reply_record s12 col">
@@ -93,7 +102,7 @@
                                             </span>
                                         </span>
                                         <span class="s3 col right-align">{{$articleData[0]->reply[$j]->created_at}}</span>
-                                        <img class="replyImg">
+                                        <img width="100%" class="replyImg">
                                     </p>
                                 @endfor
                             </div>

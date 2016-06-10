@@ -18,6 +18,7 @@ Route::get('/article/{id}', 'home@article');
 Route::get('/login/{status?}', 'home@login');
 Route::get('/register/{status?}', 'home@register');
 Route::get('/recentArticle', 'home@recent');
+Route::get('/game/{aid}', 'home@game');
 
 Route::group(['prefix' => 'auth'], function() {
 	Route::post('login', 'Auth\authController@login');

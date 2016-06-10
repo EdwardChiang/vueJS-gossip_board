@@ -69,11 +69,16 @@ class articleController extends Controller
             $article_data['content'] = $request->input('content');
             $article_data['status'] = 0;*/
             //return Input::file();
+            if(Input::file('unityFile')) $article_data['game'] = 1;
+            else $article_data['game'] = 0;
             $article_data['title'] = Input::all()['title'];
             $article_data['content'] = Input::all()['content'];
             $article_data['status'] = 0;
             $id = DB::table('articles')->insertGetId($article_data);
-            Input::file('unityFile')->move('./unityData/'.$id, 'game.unity3d');
+            if(Input::file('unityFile')) {
+                Input::file('unityFile')->move('./unityData/' . $id, 'game.unity3d');
+            }
+
             return Redirect::to('/');
             //return 0;
         } else {

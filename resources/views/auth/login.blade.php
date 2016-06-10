@@ -12,7 +12,7 @@
     <div id="login">
         <div class="formWrapper">
             <form action="{{url("auth/login")}}" method="post">
-		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+		        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="signin-card">
                     <div class="row">
                         <div class="col s12 m4 offset-m4">

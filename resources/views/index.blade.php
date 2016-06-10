@@ -40,26 +40,27 @@
                         <div class="collapsible-body row">
                             <div class="article_content s12 col">
                                 <a class="single_page_link" href="article/{{$articleData[$i]->id}}" style="color: #039be5;"><i class="material-icons right">input</i></a>
-                                    <?php
-                                        $str = $articleData[$i]->content;
-                                        $from = strrpos($str, "<meta");
-                                        if($from === false) {
-                                            $from = -1;
-                                            $to = -1;
-                                        } else {
-                                            $to = strrpos($str, ">");
-                                        }
-                                        for($ii=0; $ii<strlen($str); $ii++) {
-                                            if($from != -1) {
-                                                if($ii>=$from && $ii<=$to+1) {
-                                                    echo htmlspecialchars($str[$ii]);
-                                                }
-                                                else echo $str[$ii];
+                                <p></p>
+                                <?php
+                                    $str = $articleData[$i]->content;
+                                    $from = strrpos($str, "<meta");
+                                    if($from === false) {
+                                        $from = -1;
+                                        $to = -1;
+                                    } else {
+                                        $to = strrpos($str, ">");
+                                    }
+                                    for($ii=0; $ii<strlen($str); $ii++) {
+                                        if($from != -1) {
+                                            if($ii>=$from && $ii<=$to+1) {
+                                                echo htmlspecialchars($str[$ii]);
                                             }
                                             else echo $str[$ii];
                                         }
-                                    ?>
-                                    <!---->
+                                        else echo $str[$ii];
+                                    }
+                                ?>
+                                <!---->
                             </div>
                             <div class="s12 col">
                                 <p class="content-line left-align"></p>

@@ -38,7 +38,7 @@ class replyController extends Controller
             $reply_data['uid'] = Auth::user()->id;
             $reply_data['aid'] = $request->input('aid');
             $reply_data['content'] = $request->input('content');
-            $reply_data['content_img'] = $request->input('content_img');
+            if($request->input('content_img')) $reply_data['content_img'] = $request->input('content_img');
 
             $return_id = DB::table('reply')->insertGetId($reply_data);
             DB::table('articles')

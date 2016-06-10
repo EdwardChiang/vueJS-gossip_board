@@ -68,8 +68,8 @@ class home extends BaseController
         return view('auth/register')->with('status', $status);
     }
 
-    function canvas()
+    function game($aid)
     {
-	return view('canvas');
+	    return view('game')->with('aid', $aid);
     }
 }
